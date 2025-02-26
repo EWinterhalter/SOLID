@@ -21,7 +21,7 @@ type Printer interface {
 type ConsolePrinter struct{}
 
 func (cp ConsolePrinter) Print(student Student) {
-	fmt.Printf("Student ID: %d, Name: %s, Grade: %d\n", student.ID, student.Name, student.Grade)
+	fmt.Printf("ID: %d, Name: %s, Grade: %d\n", student.ID, student.Name, student.Grade)
 }
 
 // Dependency Inversion Principle (DIP) Модули верхнего уровня не должны зависеть от модулей нижнего уровня. Оба типа модулей должны зависеть от абстракций.
@@ -35,7 +35,7 @@ func (ss StudentService) PrintStudentInfo(student Student) {
 }
 
 func main() {
-	student := Student{ID: 1, Name: "John Doe", Grade: 95}
+	student := Student{ID: 1, Name: "Name", Grade: 20}
 	printer := ConsolePrinter{}
 	studentService := StudentService{printer: printer}
 
